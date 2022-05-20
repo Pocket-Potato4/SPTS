@@ -1,0 +1,617 @@
+local Plr = game:GetService("Players").LocalPlayer
+local Players = game:GetService("Players")
+local Tws = game:GetService("TweenService")
+local UIP = game:GetService("UserInputService")
+
+local ProjectFarmSPTS = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local EspToggle = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local InfYield = Instance.new("TextButton")
+local TextLabel_3 = Instance.new("TextLabel")
+local FS = Instance.new("TextLabel")
+local FSAmt = Instance.new("TextLabel")
+local BT = Instance.new("TextLabel")
+local BTAmt = Instance.new("TextLabel")
+local PP = Instance.new("TextLabel")
+local PPAmt = Instance.new("TextLabel")
+local Divider = Instance.new("TextLabel")
+local Divider_2 = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+local FolderForFarm = Instance.new("ScrollingFrame")
+local FSFarmToggle = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local FSFarmConfig = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local BTFarmToggle = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local BTFarmConfig = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local PPFarmToggle = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local PPFarmConfig = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+local ExtraToggle = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local ExtraTab = Instance.new("Frame")
+local AutoRespawn = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local AntiAFK = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local Divider_3 = Instance.new("TextLabel")
+local Divider_4 = Instance.new("TextLabel")
+local stat = 0
+
+local function BTfarm()
+
+	if BTFarmConfig.Text == "100" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(365, 250, -446)}):Play()
+	elseif BTFarmConfig.Text == "10K" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(356, 264, -494)}):Play()
+	elseif BTFarmConfig.Text == "100K" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(1636, 259, 2247)}):Play()
+	elseif BTFarmConfig.Text == "1M" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2298, 977, 1071)}):Play()
+	elseif BTFarmConfig.Text == "10M" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2043, 714, -1891)}):Play()
+	elseif BTFarmConfig.Text == "1B"	 then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-254, 287, 979)}):Play()
+	elseif BTFarmConfig.Text == "100B" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-277, 281, 993)}):Play()
+	elseif BTFarmConfig.Text == "10T" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-278, 281, 1007)}):Play()
+	else
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+BT1"})
+
+	end
+end
+
+local function FSFarm()
+
+	if FSFarmConfig.Text == "Rock" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(410, 270, 976)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS2"})
+	elseif FSFarmConfig.Text == "Crystal" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2276, 1973, 1051)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS3"})
+	elseif FSFarmConfig.Text == "Bluestar" then	
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-1177, 4789, -2294)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS4"})
+	elseif FSFarmConfig.Text == "Greenstar" then	
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(1381, 9274, 1649)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS5"})
+	elseif FSFarmConfig.Text == "Orangestar" then		
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-370, 15734, -15)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS6"})
+	else
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS1"})
+	end
+end
+
+local function PPFarm()
+	if PPFarmConfig.Text == "1M" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2532, 5486, -543)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP3"})
+
+	elseif PPFarmConfig.Text == "1B" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2564, 5500, -438)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP4"})
+
+	elseif	PPFarmConfig.Text == "1T" then	
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2580, 5516, -503)}):Play()
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP5"})
+
+	elseif	PPFarmConfig.Text == "1QA" then	
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2543, 5412, -494)}):Play()	
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP6"})
+
+	else
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP2"})
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP1"})
+	end
+end
+
+
+
+
+local function respawn()
+	if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"Respawn"})
+	end
+end
+
+
+--Properties:
+
+ProjectFarmSPTS.Name = "ProjectFarm.SPTS"
+ProjectFarmSPTS.Parent = game.CoreGui
+
+Frame.Parent = ProjectFarmSPTS
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.188433915, 0, 0.104323752, 0)
+Frame.Size = UDim2.new(0, 870, 0, 643)
+UICorner.Parent = Frame
+Frame.Active = true
+Frame.Draggable = true
+
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(-0.0653565153, 0, 0.0792641565, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 41)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Esp"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20.000
+
+EspToggle.Name = "EspToggle"
+EspToggle.Parent = TextLabel
+EspToggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+EspToggle.BorderColor3 = Color3.fromRGB(249, 255, 250)
+EspToggle.Position = UDim2.new(0.771073461, 0, -0.13287428, 0)
+EspToggle.Size = UDim2.new(0, 73, 0, 50)
+EspToggle.Font = Enum.Font.SourceSans
+EspToggle.Text = "Not Done"
+EspToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+EspToggle.TextSize = 14.000
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(-0.0653565153, 0, 0.211457014, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 41)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Inf Yield"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 20.000
+
+InfYield.Name = "InfYield"
+InfYield.Parent = TextLabel_2
+InfYield.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+InfYield.BorderColor3 = Color3.fromRGB(249, 255, 250)
+InfYield.Position = UDim2.new(0.771073461, 0, -0.13287428, 0)
+InfYield.Size = UDim2.new(0, 73, 0, 50)
+InfYield.Font = Enum.Font.SourceSans
+InfYield.Text = ""
+InfYield.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfYield.TextSize = 14.000
+InfYield.MouseButton1Down:Connect(function()
+	InfYield.Text = "x"
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(-0.0653565153, 0, 0.354536325, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 41)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Stats"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 20.000
+
+FS.Name = "FS"
+FS.Parent = Frame
+FS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FS.BackgroundTransparency = 1.000
+FS.BorderSizePixel = 0
+FS.Position = UDim2.new(0.0197009556, 0, 0.40274784, 0)
+FS.Size = UDim2.new(0, 200, 0, 41)
+FS.Font = Enum.Font.SourceSans
+FS.Text = "FistStrength:"
+FS.TextColor3 = Color3.fromRGB(255, 255, 255)
+FS.TextSize = 20.000
+
+FSAmt.Name = "FSAmt"
+FSAmt.Parent = FS
+FSAmt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FSAmt.BackgroundTransparency = 1.000
+FSAmt.BorderSizePixel = 0
+FSAmt.Position = UDim2.new(-0.00225305557, 0, 0.502357125, 0)
+FSAmt.Size = UDim2.new(0, 200, 0, 41)
+FSAmt.Font = Enum.Font.SourceSans
+FSAmt.Text = "Amt"
+FSAmt.TextColor3 = Color3.fromRGB(255, 255, 255)
+FSAmt.TextSize = 20.000
+
+BT.Name = "BT"
+BT.Parent = Frame
+BT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BT.BackgroundTransparency = 1.000
+BT.BorderSizePixel = 0
+BT.Position = UDim2.new(0.0185515303, 0, 0.482063532, 0)
+BT.Size = UDim2.new(0, 200, 0, 41)
+BT.Font = Enum.Font.SourceSans
+BT.Text = "BodyToughness:"
+BT.TextColor3 = Color3.fromRGB(255, 255, 255)
+BT.TextSize = 20.000
+
+BTAmt.Name = "BTAmt"
+BTAmt.Parent = BT
+BTAmt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BTAmt.BackgroundTransparency = 1.000
+BTAmt.BorderSizePixel = 0
+BTAmt.Position = UDim2.new(-0.00225305557, 0, 0.453576654, 0)
+BTAmt.Size = UDim2.new(0, 200, 0, 41)
+BTAmt.Font = Enum.Font.SourceSans
+BTAmt.Text = "Amt"
+BTAmt.TextColor3 = Color3.fromRGB(255, 255, 255)
+BTAmt.TextSize = 20.000
+
+PP.Name = "PP"
+PP.Parent = Frame
+PP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PP.BackgroundTransparency = 1.000
+PP.BorderSizePixel = 0
+PP.Position = UDim2.new(0.0197009556, 0, 0.558268785, 0)
+PP.Size = UDim2.new(0, 200, 0, 41)
+PP.Font = Enum.Font.SourceSans
+PP.Text = "PsychicPower:"
+PP.TextColor3 = Color3.fromRGB(255, 255, 255)
+PP.TextSize = 20.000
+
+PPAmt.Name = "PPAmt"
+PPAmt.Parent = PP
+PPAmt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PPAmt.BackgroundTransparency = 1.000
+PPAmt.BorderSizePixel = 0
+PPAmt.Position = UDim2.new(-0.00225305557, 0, 0.502357125, 0)
+PPAmt.Size = UDim2.new(0, 200, 0, 41)
+PPAmt.Font = Enum.Font.SourceSans
+PPAmt.Text = "AMT"
+PPAmt.TextColor3 = Color3.fromRGB(255, 255, 255)
+PPAmt.TextSize = 20.000
+
+Divider.Name = "Divider"
+Divider.Parent = Frame
+Divider.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Divider.BorderSizePixel = 0
+Divider.Position = UDim2.new(0.294218779, 0, 0.0171073098, 0)
+Divider.Size = UDim2.new(0, 1, 0, 620)
+Divider.Font = Enum.Font.SourceSans
+Divider.Text = ""
+Divider.TextColor3 = Color3.fromRGB(0, 0, 0)
+Divider.TextSize = 14.000
+
+Divider_2.Name = "Divider"
+Divider_2.Parent = Frame
+Divider_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Divider_2.BorderSizePixel = 0
+Divider_2.Position = UDim2.new(0.955138326, 0, 0.0171073098, 0)
+Divider_2.Size = UDim2.new(0, 1, 0, 620)
+Divider_2.Font = Enum.Font.SourceSans
+Divider_2.Text = ""
+Divider_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Divider_2.TextSize = 14.000
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.374355406, 0, 0.0217729397, 0)
+Title.Size = UDim2.new(0, 449, 0, 47)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Farm"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+FolderForFarm.Name = "FolderForFarm"
+FolderForFarm.Parent = Frame
+FolderForFarm.Active = true
+FolderForFarm.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+FolderForFarm.BorderSizePixel = 0
+FolderForFarm.Position = UDim2.new(0.390619218, 0, 0.120386019, 0)
+FolderForFarm.Selectable = false
+FolderForFarm.Size = UDim2.new(0, 449, 0, 505)
+FolderForFarm.CanvasSize = UDim2.new(0, 0, 5, 0)
+FolderForFarm.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+
+FSFarmToggle.Name = "FSFarmToggle"
+FSFarmToggle.Parent = FolderForFarm
+FSFarmToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+FSFarmToggle.Position = UDim2.new(0.278396428, 0, 0.036702957, 0)
+FSFarmToggle.Size = UDim2.new(0, 200, 0, 50)
+FSFarmToggle.Font = Enum.Font.SourceSans
+FSFarmToggle.Text = "FS Farm: OFF"
+FSFarmToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+FSFarmToggle.TextScaled = true
+FSFarmToggle.TextSize = 14.000
+FSFarmToggle.TextWrapped = true
+FSFarmToggle.MouseButton1Down:Connect(function()
+
+	if FSFarmToggle.Text == "FS Farm: OFF" then
+		FSFarmToggle.Text = "FS Farm: ON"
+		BTFarmToggle.Text = "BT Farm: OFF"
+		PPFarmToggle.Text = "PP Farm: OFF"
+
+		repeat
+			wait(1)
+			FSFarm()
+		until FSFarmToggle.Text == "FS Farm: OFF"
+	else 
+		FSFarmToggle.Text = "FS Farm: OFF"
+	end
+end)
+
+UICorner_2.Parent = FSFarmToggle
+
+FSFarmConfig.Name = "FSFarmConfig"
+FSFarmConfig.Parent = FSFarmToggle
+FSFarmConfig.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+FSFarmConfig.Position = UDim2.new(-0.309293836, 0, -1.75865054, 0)
+FSFarmConfig.Size = UDim2.new(0, 322, 0, 50)
+FSFarmConfig.Font = Enum.Font.SourceSans
+FSFarmConfig.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
+FSFarmConfig.PlaceholderText = "Where Do you wish to farm? [Type Requirement Area]"
+FSFarmConfig.Text = ""
+FSFarmConfig.TextColor3 = Color3.fromRGB(0, 0, 0)
+FSFarmConfig.TextSize = 14.000
+
+UICorner_3.Parent = FSFarmConfig
+
+BTFarmToggle.Name = "BTFarmToggle"
+BTFarmToggle.Parent = FolderForFarm
+BTFarmToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+BTFarmToggle.Position = UDim2.new(0.278396428, 0, 0.100155517, 0)
+BTFarmToggle.Size = UDim2.new(0, 200, 0, 50)
+BTFarmToggle.Font = Enum.Font.SourceSans
+BTFarmToggle.Text = "BT Farm: OFF"
+BTFarmToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+BTFarmToggle.TextScaled = true
+BTFarmToggle.TextSize = 14.000
+BTFarmToggle.TextWrapped = true
+BTFarmToggle.MouseButton1Down:Connect(function()
+
+	if BTFarmToggle.Text == "BT Farm: OFF" then
+		BTFarmToggle.Text = "BT Farm: ON"
+		FSFarmToggle.Text = "FS Farm: OFF"
+		PPFarmToggle.Text = "PP Farm: OFF"
+		repeat
+			wait(1)
+			BTfarm()
+		until BTFarmToggle.Text == "BT Farm: OFF"
+	else 
+		BTFarmToggle.Text = "BT Farm: OFF"
+	end
+end)
+
+
+UICorner_4.Parent = BTFarmToggle
+
+BTFarmConfig.Name = "BTFarmConfig"
+BTFarmConfig.Parent = BTFarmToggle
+BTFarmConfig.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+BTFarmConfig.Position = UDim2.new(-0.309293836, 0, -1.75865054, 0)
+BTFarmConfig.Size = UDim2.new(0, 322, 0, 50)
+BTFarmConfig.Font = Enum.Font.SourceSans
+BTFarmConfig.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
+BTFarmConfig.PlaceholderText = "Where Do you wish to farm? [Type Requirement Area]"
+BTFarmConfig.Text = ""
+BTFarmConfig.TextColor3 = Color3.fromRGB(0, 0, 0)
+BTFarmConfig.TextSize = 14.000
+
+UICorner_5.Parent = BTFarmConfig
+
+PPFarmToggle.Name = "PPFarmToggle"
+PPFarmToggle.Parent = FolderForFarm
+PPFarmToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+PPFarmToggle.Position = UDim2.new(0.278396428, 0, 0.17200622, 0)
+PPFarmToggle.Size = UDim2.new(0, 200, 0, 50)
+PPFarmToggle.Font = Enum.Font.SourceSans
+PPFarmToggle.Text = "PP Farm: OFF"
+PPFarmToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+PPFarmToggle.TextScaled = true
+PPFarmToggle.TextSize = 14.000
+PPFarmToggle.TextWrapped = true
+PPFarmToggle.MouseButton1Down:Connect(function()
+
+	if PPFarmToggle.Text == "PP Farm: OFF" then
+		PPFarmToggle.Text = "PP Farm: ON"
+		BTFarmToggle.Text = "BT Farm: OFF"
+		FSFarmToggle.Text = "FS Farm: OFF"
+
+		repeat
+			wait(1)
+			PPFarm()
+		until PPFarmToggle.Text == "PP Farm: OFF"
+	else 
+		PPFarmToggle.Text = "PP Farm: OFF"
+	end
+end)
+
+
+UICorner_6.Parent = PPFarmToggle
+
+PPFarmConfig.Name = "PPFarmConfig"
+PPFarmConfig.Parent = PPFarmToggle
+PPFarmConfig.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+PPFarmConfig.Position = UDim2.new(-0.309293836, 0, -1.75865054, 0)
+PPFarmConfig.Size = UDim2.new(0, 322, 0, 50)
+PPFarmConfig.Font = Enum.Font.SourceSans
+PPFarmConfig.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
+PPFarmConfig.PlaceholderText = "Where Do you wish to farm? [Type Requirement Area]"
+PPFarmConfig.Text = ""
+PPFarmConfig.TextColor3 = Color3.fromRGB(0, 0, 0)
+PPFarmConfig.TextSize = 14.000
+
+UICorner_7.Parent = PPFarmConfig
+
+ExtraToggle.Name = "ExtraToggle"
+ExtraToggle.Parent = FolderForFarm
+ExtraToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+ExtraToggle.Position = UDim2.new(0.0512249172, 0, 0.204976678, 0)
+ExtraToggle.Size = UDim2.new(0, 200, 0, 50)
+ExtraToggle.Font = Enum.Font.SourceSans
+ExtraToggle.Text = "Extra ^"
+ExtraToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExtraToggle.TextScaled = true
+ExtraToggle.TextSize = 14.000
+ExtraToggle.TextWrapped = true
+ExtraToggle.MouseButton1Down:Connect(function()
+	if ExtraToggle.Text == "Extra ^" then
+
+		ExtraToggle.Text = "Extra v"
+		ExtraTab.Visible = true
+	else
+		ExtraTab.Visible = false
+		ExtraToggle.Text = "Extra ^"
+	end
+end)
+
+UICorner_8.Parent = ExtraToggle
+
+ExtraTab.Name = "ExtraTab"
+ExtraTab.Parent = ExtraToggle
+ExtraTab.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+ExtraTab.BorderSizePixel = 0
+ExtraTab.Position = UDim2.new(0.137853086, 0, 0.919263959, 0)
+ExtraTab.Size = UDim2.new(0, 143, 0, 219)
+ExtraTab.Visible = false
+
+AutoRespawn.Name = "AutoRespawn"
+AutoRespawn.Parent = ExtraTab
+AutoRespawn.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+AutoRespawn.Position = UDim2.new(-0.00355112925, 0, 0.0836674944, 0)
+AutoRespawn.Size = UDim2.new(0, 141, 0, 29)
+AutoRespawn.Font = Enum.Font.SourceSans
+AutoRespawn.Text = "Auto Respawn when Dead: OFF"
+AutoRespawn.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoRespawn.TextScaled = true
+AutoRespawn.TextSize = 14.000
+AutoRespawn.TextWrapped = true
+AutoRespawn.MouseButton1Down:Connect(function()
+	if AutoRespawn.Text == "Auto Respawn when Dead: OFF" then
+		AutoRespawn.Text = "Auto Respawn when Dead: ON"					
+		repeat 
+			wait(1)
+			respawn()
+
+		until AutoRespawn.Text == "Auto Respawn when Dead: OFF"
+	else 	
+		AutoRespawn.Text = "Auto Respawn when Dead: OFF"
+	end
+end)
+
+UICorner_9.Parent = AutoRespawn
+
+AntiAFK.Name = "AntiAFK"
+AntiAFK.Parent = ExtraTab
+AntiAFK.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+AntiAFK.Position = UDim2.new(0.0104348846, 0, 0.25261727, 0)
+AntiAFK.Size = UDim2.new(0, 141, 0, 29)
+AntiAFK.Font = Enum.Font.SourceSans
+AntiAFK.Text = "Anti AFK -- Made By UnGodly_Super"
+AntiAFK.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiAFK.TextScaled = true
+AntiAFK.TextSize = 14.000
+AntiAFK.TextWrapped = true
+
+UICorner_10.Parent = AntiAFK
+
+Divider_3.Name = "Divider"
+Divider_3.Parent = Frame
+Divider_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Divider_3.BorderSizePixel = 0
+Divider_3.Position = UDim2.new(0, 0, 0.665629864, 0)
+Divider_3.Size = UDim2.new(0, 255, 0, 1)
+Divider_3.Font = Enum.Font.SourceSans
+Divider_3.Text = ""
+Divider_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Divider_3.TextSize = 14.000
+
+Divider_4.Name = "Divider"
+Divider_4.Parent = Frame
+Divider_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Divider_4.BorderSizePixel = 0
+Divider_4.Position = UDim2.new(0.00114942528, 0, 0.413685858, 0)
+Divider_4.Size = UDim2.new(0, 255, 0, 1)
+Divider_4.Font = Enum.Font.SourceSans
+Divider_4.Text = ""
+Divider_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Divider_4.TextSize = 14.000
+
+
+UIP.InputBegan:Connect(function(input, gameProcessedEvent)
+	if input.KeyCode == Enum.KeyCode.Minus then
+		if Frame.Visible == false then
+			Frame.Visible = true
+		else
+			Frame.Visible = false
+		end
+	end 
+end)
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e cmds" then
+		print("youve been whitelisted so here are the commands \n/e spawn\n/e cityport\n/e crystal\n/e bluestar\n/e greenstar\n/e orangestar\n/e hellbt\n/e zen")
+	end
+end)
+
+
+
+
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e spawn" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(426, 249, 878)}):Play()
+	end
+end)
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e cityport" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(343, 264, -418)}):Play()
+	end
+end)
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e crystal" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2276, 1974, 1051)}):Play()
+	end
+end)
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e zen" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-2547, 5677, -500)}):Play()
+	end
+end)
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e bluestar" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(1176, 4789, -2293)}):Play()
+	end
+end)
+
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e greenstar" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(1380, 9274, 1647)}):Play()
+	end
+end)
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e orangestar" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-368, 15735, -11)}):Play()
+	end
+end)
+Plr.Chatted:Connect(function(Cmd)
+	if Cmd == "/e hellbt" then
+		Tws:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1.2), {CFrame = CFrame.new(-246, 291, 960)}):Play()
+	end
+end)
+
+repeat
+	wait(1)
+	FSAmt.Text = (string.format("%.0f", game.Players.LocalPlayer.PrivateStats.FistStrength.Value))
+	BTAmt.Text = (string.format("%.0f", game.Players.LocalPlayer.PrivateStats.BodyToughness.Value))
+	PPAmt.Text = (string.format("%.0f", game.Players.LocalPlayer.PrivateStats.PsychicPower.Value))
+until stat == 1
+
+
